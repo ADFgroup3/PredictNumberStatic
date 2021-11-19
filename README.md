@@ -1,0 +1,2 @@
+# PredictNumberStatic
+数字予測アプリから静的な部分だけ抜き出したバージョン
