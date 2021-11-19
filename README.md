@@ -5,18 +5,18 @@ HTML CSS JavaScriptを変更する場合はこのレポジトリを変更して�
 <table>
   <tr>
     <td>index.html</td>
-    <td>:htmlの内容、文章</td>
+    <td>htmlの内容、文章</td>
   </tr>
   <tr>
     <td>css/style.css/</td>
-    <td>:スタイルを追加</td>
+    <td>スタイルを追加</td>
   </tr>
   <tr>
     <td>js/form.js/</td>
-    <td>:フォームボタンが押された時にcanvasの中身を画像に変換</td>
+    <td>フォームボタンが押された時にcanvasの中身を画像に変換</td>
   </tr>
   <tr>
     <td>js/canvas.js/</td>
-    <td>:canvasを動かす（マウスクリックされた時にインクを塗る）</td>
+    <td>canvasを動かす（マウスクリックされた時にインクを塗る）</td>
    <tr>
 </table>
