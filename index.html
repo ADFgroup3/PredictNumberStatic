@@ -19,7 +19,7 @@
         <p>
             数字の画像ファイルを選択し実行ボタンを押すとその画像から予測された数字が表示されます。
         </p>
-        <form onsubmit="CanvasToImage()">
+        <form>
                 <div id = "field">
                     <canvas id="canvas" width="300px" height="300px">
                         ブラウザがCanvasに対応していません
@@ -27,7 +27,7 @@
                 </div>
                 <input type="hidden" id="img" name="img">
                 <input type="button" id="clear" value="全消し">
-                <input type="submit" value="実行">
+                <input type="submit" value="実行" onclick="CanvasToImage()">
         </form>
 
         <p>{{text}}</p>
