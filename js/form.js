@@ -2,6 +2,9 @@ function CanvasToImage(){
     const canvas = document.getElementById("canvas");
     const dataURL = canvas.toDataURL('image/png').replace(/^.*,/, '');
 
-    //隠し要素に値を代入
-    document.getElementById("img").value = dataURL;
+    ////隠し要素に値を代入
+    //document.getElementById("img").value = dataURL;
+    
+    //B64型式の画像を表示
+    console.log(dataURL);
 }
