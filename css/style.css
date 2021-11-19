@@ -1,0 +1,10 @@
+canvas{
+    border: 1px solid #000000;
+}
+footer {
+    background: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 26px 0;
+    font-size: 0.75rem;
+  }

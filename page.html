@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>PredictNumber</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Number prediction web app by scikit-learn">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <!-- JavaScript -->
+        <script type="text/JavaScript" src="{{ url_for('static', filename='js/form.js') }}"></script>
+        <script type="text/JavaScript" src="{{ url_for('static', filename='js/canvas.js') }}"></script>
+
+    <body>
+        <header>
+            ADFGroup3
+        </header>
+        <h1>画像から数字の認識</h1>
+        <p>
+            数字の画像ファイルを選択し実行ボタンを押すとその画像から予測された数字が表示されます。
+        </p>
+        <form action = "/" method = "POST" enctype="multipart/form-data" onsubmit="CanvasToImage()">
+                <div id = "field">
+                    <canvas id="canvas" width="300px" height="300px">
+                        ブラウザがCanvasに対応していません
+                    </canvas>
+                </div>
+                <input type="hidden" id="img" name="img">
+                <input type="button" id="clear" value="全消し">
+                <input type="submit" value="実行">
+        </form>
+
+        <p>{{text}}</p>
+        <footer>
+            <p><small>&copy; Copyright 2021 SOMA ADF Group3</small></p>
+        </footer>
+        
+    </body>
+</html>
