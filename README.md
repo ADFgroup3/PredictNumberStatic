@@ -18,7 +18,7 @@ HTML CSS JavaScriptを変更する場合はこのレポジトリを変更して�
   <tr>
     <td>js/canvas.js/</td>
     <td>canvasを動かす（マウスクリックされた時にインクを塗る）</td>
-   <tr>
+   <tr><br>
 基本的にはindex.htmlとstyle.cssを変更してくれればOK！<br>
-README.mdはテキストエディターで開くとバグるので無視してね
+このファイル（README.md）はテキストエディターで開くとバグるので無視して～
 </table>
