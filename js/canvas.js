@@ -52,13 +52,6 @@ window.addEventListener("load", () => {
         lastP.x = null;
         lastP.y = null;
     }
-    function dragEnd2(e){
-        ctx.closePath();
-        isDrag = false;
-        lastP.x = null;
-        lastP.y = null;
-        console.log("success");
-    }
 
     //各ボタン、キャンバスにイベントを指定
     const clearBtn = document.getElementById("clear");
@@ -69,10 +62,15 @@ window.addEventListener("load", () => {
     canvas.addEventListener("mousemove", (e) => {
         draw(e.layerX, e.layerY);
     });
+
+    const canvasP = canvas.getBoundingClientRect();
     canvas.addEventListener("touchstart", dragStart);
-    canvas.addEventListener("touchend", dragEnd2);
+    canvas.addEventListener("touchend", dragEnd);
+    canvas.addEventListener("touchcancel", dragEnd);
     canvas.addEventListener("touchmove", (e) => {
-        draw(e.clientX, e.clientY);
+        let deltaX = e.touches[0].pageX - canvasP.left;
+        let deltaY = e.touches[0].pageY - canvasP.top;
+        draw(deltaX, deltaY);
     });
 });
 
