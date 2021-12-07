@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+    //DOMツリーが構築され次第実行（サイトが表示される直前に実行）
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
 
@@ -12,11 +13,11 @@ window.addEventListener("load", () => {
 
     let isDrag = false;
 
-        //書く処理（主要部）
-        function draw(x, y){
-            if(!isDrag){
-                return;
-            }
+    //書く処理(メイン)
+    function draw(x, y){
+        if(!isDrag){
+            return;
+        }
         //ライン指定
         ctx.lineCap = "round";
         ctx.lineJoin = "round";
@@ -51,6 +52,13 @@ window.addEventListener("load", () => {
         lastP.x = null;
         lastP.y = null;
     }
+    function dragEnd2(e){
+        ctx.closePath();
+        isDrag = false;
+        lastP.x = null;
+        lastP.y = null;
+        console.log("success");
+    }
 
     //各ボタン、キャンバスにイベントを指定
     const clearBtn = document.getElementById("clear");
@@ -61,4 +69,21 @@ window.addEventListener("load", () => {
     canvas.addEventListener("mousemove", (e) => {
         draw(e.layerX, e.layerY);
     });
+    canvas.addEventListener("touchstart", dragStart);
+    canvas.addEventListener("touchend", dragEnd2);
+    canvas.addEventListener("touchmove", (e) => {
+        draw(e.clientX, e.clientY);
+    });
 });
+
+//submitボタンが押されたときの処理
+function CanvasToImage(){
+    const canvas = document.getElementById("canvas");
+    const dataURL = canvas.toDataURL('image/png').replace(/^.*,/, '');
+
+    //隠し要素に値を代入
+    document.getElementById("img").value = dataURL;
+    
+    //B64型式の画像を表示
+    console.log(dataURL);
+}
