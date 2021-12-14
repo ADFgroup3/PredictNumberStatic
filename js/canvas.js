@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
             return;
         }
         //クロップ用の枠の座標を取得
-        const radius = 30;
+        const radius = 40;
         if(frameP.x1 === null){
             frameP.x0 = x - radius;
             frameP.y0 = y - radius;
@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
         //ライン指定
         ctx.lineCap = "round";
         ctx.lineJoin = "round";
-        ctx.lineWidth = 30;
+        ctx.lineWidth = 25;
         ctx.strokeStyle = "black";
         if (lastP.x === null || lastP.y === null){
             ctx.moveTo(x, y);
