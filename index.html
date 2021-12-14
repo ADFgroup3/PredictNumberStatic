@@ -16,19 +16,23 @@
         <header>
             ADFGroup3
         </header>
-        <h1>画像から数字の認識</h1>
+        <h1>手書き数字の認識</h1>
         <p>
-            数字の画像ファイルを選択し実行ボタンを押すとその画像から予測された数字が表示されます。
+            1から9の数字を描画エリアに書いて実行すると数字を予測して表示します。
         </p>
         <form>
-                <div id = "field">
+                <div>
                     <canvas id="canvas" width="300px" height="300px">
                         ブラウザがCanvasに対応していません
                     </canvas>
                 </div>
-                <input type="hidden" id="img" name="img">
                 <input type="button" id="clear" value="全消し">
-                <input type="button" value="実行" onclick="CanvasToImage()">
+                <input type="button" id="execute" value="実行">
+                <div>
+                    <canvas id="hiddenCanvas" width="300px" height="300px" style="display: none;">
+                    </canvas>
+                </div>
+                <input type="hidden" id="img" name="img">
         </form>
         <!--
         レンダリングしたときにテキストが表示される場所↓
